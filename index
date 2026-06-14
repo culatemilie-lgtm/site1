@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S@FE Digitalisation - DPE Privé</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="safe-navbar">
+        <div class="nav-logo">🩺 S@FE Digitalisation | <span class="nav-sub">DPE Privé</span></div>
+        <div class="nav-search">
+            <input type="text" placeholder="🔍 Rechercher un patient (Nom, Prénom ou N° Sécu)..." aria-label="Recherche patient">
+        </div>
+        <div class="nav-user">👤 Dr. Émilie Culat <button class="btn-logout">Déconnexion</button></div>
+    </header>
+
+    <main class="safe-container">
+
+        <section class="patient-sticky-bandeau">
+            <div class="patient-card identity-box">
+                <h2>Jean DUPONT</h2>
+                <p><strong>Né le :</strong> 14/05/1974 (52 ans) &bull; <strong>Sexe :</strong> M</p>
+                <p class="nir-field">
+                    <strong>N° Sécu :</strong> 
+                    <span class="nir-masked">1 74 05 69 342 XXX XX</span>
+                    <button class="btn-toggle-view" title="Afficher le numéro complet">👁️</button>
+                </p>
+            </div>
+
+            <div class="patient-card constants-box">
+                <h3>⚖️ Constantes Cliniques</h3>
+                <div class="constants-grid">
+                    <div><strong>Taille :</strong> 180 cm</div>
+                    <div><strong>Poids :</strong> 82 kg</div>
+                </div>
+                <div class="imc-wrapper">
+                    <strong>IMC :</strong> <span class="math">25.3</span> <span class="badge badge-warning">Surpoids léger 📊</span>
+                </div>
+            </div>
+
+            <div class="patient-card medical-alert-box">
+                <div class="allergy-header">⚠️ ALERTE ALLERGIE CRITIQUE</div>
+                <div class="allergy-badge">🚨 PÉNICILLINE</div>
+                <div class="antecedents-summary">
+                    <strong>Antécédents :</strong> Diabète de type 2 (2020), Appendicectomie (2012).
+                </div>
+            </div>
+        </section>
+
+        <div class="workspace-layout">
+
+            <aside class="workspace-sidebar">
+                <div class="section-title-bar">
+                    <h3>📋 Historique Médical</h3>
+                    <span class="action-link">Tout déplier</span>
+                </div>
+                <div class="history-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">📅 12/01/2026 — Consultation Générale</div>
+                        <p><strong>Motif :</strong> Renouvellement traitement & contrôle tension.</p>
+                        <p class="timeline-notes">Patient stable. Constantes : Poids 83.5 kg | TA 13/8. Exercice physique à encourager.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">📅 14/09/2025 — Syndrome Grippal</div>
+                        <p><strong>Motif :</strong> Fièvre à 39°C, courbatures intenses.</p>
+                        <p class="timeline-notes">Prescription : Paracétamol 1g, repos strict 3 jours.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">📅 03/02/2025 — Traumatisme Cheville</div>
+                        <p><strong>Motif :</strong> Entorse suite à une chute bénigne.</p>
+                        <p class="timeline-notes">Radio cheville droite effectuée : Absence de fracture macroscopique.</p>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="workspace-main">
+                <div class="section-title-bar">
+                    <h3>📝 Consultation du Jour</h3>
+                    <span class="status-mode-badge">Mode Hors-ANT</span>
+                </div>
+
+                <div class="voice-module-card active">
+                    <div class="voice-status-indicator">
+                        <span class="pulse-mic">🎙️</span> 
+                        <strong>DICTÉE VOCALE ACTIVÉE</strong> — Parlez naturellement pour alimenter le dossier...
+                    </div>
+                    <div class="voice-live-text" contenteditable="true">
+                        Patient consulte ce jour pour une angine douloureuse depuis 48h. Déglutition difficile. Pas de fièvre constatée à la prise d'observation. À l'examen, gorge très rouge avec amygdales tuméfiées. Pas de ganglions palpables.
+                    </div>
+                    <div class="voice-actions">
+                        <button class="btn-secondary-sm">⏸️ Pause</button>
+                        <button class="btn-cyan-sm">Analyse sémantique automatique</button>
+                    </div>
+                </div>
+
+                <div class="prescription-module-card">
+                    <h3>💊 Prescription Médicamenteuse (Sécurisée)</h3>
+                    <div class="search-box-wrapper">
+                        <input type="text" class="med-search-input" value="AMOX" placeholder="Rechercher une molécule ou un médicament (Ex: Doliprane)...">
+                        <div class="predictive-dropdown">
+                            <div class="dropdown-item disabled-danger">❌ AMOXICILLINE 500mg (Bloqué — Risque Allergie Pénicilline)</div>
+                            <div class="dropdown-item disabled-danger">❌ AMOXICILLINE 1g (Bloqué — Risque Allergie Pénicilline)</div>
+                            <div class="dropdown-item">✨ AMOROLFINE 5% Solution</div>
+                        </div>
+                    </div>
+
+                    <div class="safe-security-alert">
+                        <strong>🚨 ALERTE INTERDICTION S@FE :</strong> Le logiciel a bloqué l'introduction de l'Amoxicilline. Le composant appartient à la famille des <strong>Bêta-lactamines</strong>, incompatible avec l'allergie croisée à la <strong>Pénicilline</strong> notée dans le bandeau supérieur.
+                    </div>
+
+                    <div class="favorites-protocols">
+                        <span class="protocol-label">⚡ Protocoles Rapides :</span>
+                        <button class="btn-protocol">Pack Angine Non-Bactérienne</button>
+                        <button class="btn-protocol">Pack Douleur/Fièvre</button>
+                    </div>
+
+                    <div class="prescription-lines">
+                        <div class="presc-line">
+                            <div class="presc-med">1. PARACÉTAMOL 1g (Générique) — Comprimés</div>
+                            <div class="presc-poso">1 comprimé toutes les 6 heures si douleur. Maximum 3g/jour. Pendant 4 jours.</div>
+                        </div>
+                        <div class="presc-line">
+                            <div class="presc-med">2. COLLUTOIRE HEXASPRAY — Pulvérisations</div>
+                            <div class="presc-poso">2 pulvérisations 3 fois par jour. Pendant 5 jours.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="workspace-actions-footer">
+                    <button class="btn-danger">❌ Annuler la consultation</button>
+                    <div class="right-actions">
+                        <button class="btn-dark">🖨️ IMPRIMER L'ORDONNANCE (PDF)</button>
+                        <button class="btn-cyan">💾 VALIDER & VERROUILLER LA FICHE</button>
+                    </div>
+                </footer>
+            </section>
+
+        </div>
+    </main>
+
+</body>
+</html>
